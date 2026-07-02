@@ -1,0 +1,371 @@
+/* ==================================================
+   ARCHIVO: css/style.css
+   PROYECTO: Taller 2 - Diseño Web Moderno
+   ORGANIZACIÓN: Cada sección indica el archivo que afecta
+================================================== */
+
+/* --------------------------
+   VARIABLES Y RESET GLOBAL
+   ✅ Aplica a TODOS los archivos: index.html, multimedia.html, grid.html, contacto.html
+--------------------------- */
+:root {
+  --background-color: #f4f4f4;
+  --container-color: white;
+  --nav-color: #eaeaea;
+  --hover-color: rgb(194, 194, 194);
+  --text-color: black;
+  --font-family: "Segoe UI", Arial, sans-serif;
+  --color-primario: #326bc5;
+  --color-exito: #0df059;
+  --color-acento: #f5147d;
+  --color-complemento: #95c512;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+.container {
+  margin: 20px auto;
+  background-color: var(--container-color);
+  padding: 20px;
+  border-radius: 32px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+}
+
+/* --------------------------
+   HEADER Y NAVEGACIÓN UNIFICADA
+   ✅ Aplica a TODOS los archivos
+--------------------------- */
+.header {
+  padding: 20px;
+  width: 100%;
+  border-radius: 16px;
+  background-color: var(--nav-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.nav {
+  width: 100%;
+  background-color: var(--nav-color);
+  padding: 10px 20px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav li {
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.nav li:hover,
+.nav .activo {
+  background-color: var(--hover-color);
+  font-weight: 600;
+}
+
+/* --------------------------
+   SECCIÓN PRINCIPAL GENERAL
+   ✅ Aplica a TODOS los archivos
+--------------------------- */
+.main {
+  width: 100%;
+  border-radius: 16px;
+  background-color: var(--nav-color);
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.article h2 {
+  padding: 10px;
+  margin-bottom: 10px;
+  color: var(--color-primario);
+}
+
+.article p {
+  padding: 10px;
+  text-align: justify;
+}
+
+/* --------------------------
+   COMPONENTE: BOX MODEL
+   ✅ Exclusivo para: index.html
+--------------------------- */
+.container-box-model {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.box-margin,
+.box-border,
+.box-padding {
+  border-radius: 8px;
+  position: relative;
+  width: fit-content;
+  text-align: center;
+}
+
+.box-margin {
+  background-color: #ffdfa7;
+  padding: 44px 40px 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-border {
+  background-color: #ffa7a7;
+  padding: 36px 34px 26px;
+  border: 8px solid rgba(51, 51, 51, 0.22);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-padding {
+  background-color: #d3ffba;
+  padding: 32px 30px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-label {
+  position: absolute;
+  top: 0;
+  color: #1f1f1f;
+  font-weight: bold;
+}
+
+.box-content {
+  background-color: rgb(104, 187, 255);
+  width: 220px;
+  min-height: 120px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #1f1f1f;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 18px;
+}
+
+/* --------------------------
+   COMPONENTE: BENTO GRID (Multimedia)
+   ✅ Exclusivo para: multimedia.html
+--------------------------- */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  padding: 5px;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.bento-grid div {
+  text-align: center;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: #cfcfcf;
+  font-weight: 500;
+}
+
+.bento-grid audio,
+.bento-grid iframe,
+.bento-grid video {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+/* --------------------------
+   SISTEMA GRID GENERAL
+   ✅ Exclusivo para: grid.html
+--------------------------- */
+.grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.grid-cell,
+.aside-cell,
+.main-cell,
+.section-cell,
+.footer-cell {
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-cell { background-color: var(--color-primario); min-height: 80px; }
+.aside-cell  { background-color: var(--color-primario); min-height: 150px; }
+.main-cell   { background-color: var(--color-exito); min-height: 150px; }
+.section-cell{ background-color: var(--color-acento); min-height: 100px; }
+.footer-cell { background-color: var(--color-complemento); min-height: 80px; }
+
+/* --------------------------
+   HOJA DE VIDA / CONTACTO
+   ✅ Exclusivo para: contacto.html
+--------------------------- */
+.perfil-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(50, 107, 197, 0.05);
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--color-primario);
+}
+
+.datos-contacto p {
+  padding: 5px 0;
+}
+
+.datos-contacto a {
+  color: var(--color-primario);
+  font-weight: 500;
+}
+
+#profile, #experience, #education, #certificate, #skill {
+  margin-bottom: 25px;
+  padding: 15px;
+  border-left: 4px solid var(--color-primario);
+}
+
+#profile h1, #experience h1, #education h1, #certificate h1, #skill h1 {
+  color: var(--color-primario);
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+#experience ul, #skill ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+#experience li, #skill li {
+  list-style: disc;
+  margin: 5px 0;
+}
+
+/* --------------------------
+   PIE DE PÁGINA GENERAL
+   ✅ Aplica a TODOS los archivos
+--------------------------- */
+.footer {
+  width: 100%;
+  text-align: center;
+  background-color: var(--nav-color);
+  color: var(--text-color);
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+/* --------------------------
+   📱 DISEÑO RESPONSIVO
+--------------------------- */
+@media (max-width: 767px) {
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container-box-model {
+    padding: 10px;
+  }
+
+  .box-content {
+    width: 180px;
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .perfil-header {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 200px 1fr 1fr;
+    grid-template-rows: auto 1fr auto auto;
+  }
+
+  .header-cell { grid-column: 1 / 4; }
+  .aside-cell  { grid-row: 2 / 4; }
+  .main-cell   { grid-column: 2 / 4; }
+  .footer-cell { grid-column: 1 / 4; }
+}
